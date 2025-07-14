@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta Virtual 💜</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #1b0c2e, #2c1a44);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background 0.4s ease;
+    }
+
+    .modoClaro {
+      background: linear-gradient(to bottom right, #f3eaff, #e6d6ff);
+    }
+
+    .carta {
+      background: #2e1b47;
+      border: 2px solid #9c6fe5;
+      border-radius: 20px;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(100, 60, 150, 0.5);
+      animation: fadeIn 2s ease;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .modoClaro .carta {
+      background: #ffffff;
+      color: #333;
+      border: 2px solid #b399ff;
+    }
+
+    .decoracion {
+      width: 100px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(180, 120, 255, 0.4);
+    }
+
+    h1 {
+      color: #d4b3ff;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .modoClaro h1 {
+      color: #5e429d;
+    }
+
+    p {
+      color: #e5d4ff;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .modoClaro p {
+      color: #333;
+    }
+
+    .emojis {
+      font-size: 1.5em;
+      margin-top: 15px;
+      color: #f0dfff;
+    }
+
+    .modoClaro .emojis {
+      color: #7a5ca8;
+    }
+
+    .botones {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #9c6fe5;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b48cf0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    ul {
+      text-align: left;
+      color: #e5d4ff;
+      margin-top: 15px;
+    }
+
+    .modoClaro ul {
+      color: #444;
+    }
+
+    .secreto {
+      display: none;
+      margin-top: 10px;
+      color: #ffd;
+    }
+
+    .modoClaro .secreto {
+      color: #444;
+    }
+
+    .click-reveal {
+      color: #ccc;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .modoClaro .click-reveal {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carta">
+    <h1>Para alguien muy especial 💜</h1>
+    
+    <p>
+      Esta es una pequeña carta virtual para decirte<br>
+      lo mucho que te aprecio, Intie :) ☁️🌸<br>
+      Aunque hace poco más de un mes que nos conocemos, créeme que ha sido el mejor mes de este año...
+    </p>
+
+    <img class="decoracion" src="https://i.pinimg.com/originals/b8/95/8d/b8958d324507034778208e7f3c3b0ea2.jpg" alt="Decoración">
+
+    <p>
+      Es genial cómo he llegado a admirarte y quererte tanto. Eres alguien muy tierna, fuerte y divertida.
+      Me la paso muy bien hablando contigo, por eso quiero que también seas feliz y logres tus sueños.
+    </p>
+
+    <img class="decoracion" src="https://www.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/10/flor-nube-significado.jpg" alt="Decoración 2">
+
+    <p>
+      Esta amistad la atesoro con todo mi corazón. Te veo como la gran persona que eres, y ahora que te veo, no apartaré la vista. Estaré ahí, pase lo que pase. Siempre y cuando me permitas seguir en tu vida. Gracias por dejarme estarlo aún :)
+    </p>
+
+    <p>Con cariño: David</p>
+
+    <div class="emojis">💜🌸☁️✨🌈</div>
+
+    <div class="click-reveal" onclick="document.getElementById('secreto').style.display='block'">
+      💌 Haz clic aquí para leer algo secreto
+    </div>
+    <div id="secreto" class="secreto">
+      Gracias por existir. Tu luz brilla más de lo que tú misma imaginas 🌟
+    </div>
+
+    <ul>
+      <li><strong>Hace 1 mes:</strong> Nos conocimos</li>
+      <li><strong>Primera charla larga:</strong> Me hiciste reír como no lo hacía en meses</li>
+      <li><strong>Jugamos juntos:</strong> Me encantó verte feliz</li>
+    </ul>
+
+    <div class="botones">
+      <button onclick="toggleTheme()">🌙/☀️ Cambiar modo</button>
+      <button onclick="toggleMusic()">🎵 Música</button>
+    </div>
+  </div>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('modoClaro');
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById("bgMusic");
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+
+</body>
+</html>
