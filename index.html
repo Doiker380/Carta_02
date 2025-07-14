@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Carta Virtual 💜</title>
+  <title>Carta Virtual 2 💜</title>
   <style>
     body {
       margin: 0;
@@ -19,6 +19,14 @@
 
     .modoClaro {
       background: linear-gradient(to bottom right, #f3eaff, #e6d6ff);
+    }
+
+    .top-buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
     }
 
     .carta {
@@ -77,18 +85,13 @@
       color: #7a5ca8;
     }
 
-    .botones {
-      margin-top: 20px;
-    }
-
     button {
-      margin: 5px;
-      padding: 8px 16px;
+      padding: 8px 14px;
       border: none;
       border-radius: 10px;
       background-color: #9c6fe5;
       color: white;
-      font-size: 1em;
+      font-size: 0.9em;
       cursor: pointer;
       transition: background 0.3s ease;
     }
@@ -102,14 +105,14 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    ul {
-      text-align: left;
-      color: #e5d4ff;
-      margin-top: 15px;
+    .click-reveal {
+      color: #ccc;
+      cursor: pointer;
+      margin-top: 10px;
     }
 
-    .modoClaro ul {
-      color: #444;
+    .modoClaro .click-reveal {
+      color: #666;
     }
 
     .secreto {
@@ -122,69 +125,72 @@
       color: #444;
     }
 
-    .click-reveal {
-      color: #ccc;
-      cursor: pointer;
-      margin-top: 10px;
+    ul {
+      text-align: left;
+      color: #e5d4ff;
+      margin-top: 15px;
     }
 
-    .modoClaro .click-reveal {
-      color: #666;
+    .modoClaro ul {
+      color: #444;
     }
   </style>
 </head>
 <body>
 
+  <!-- Botones arriba -->
+  <div class="top-buttons">
+    <button onclick="toggleTheme()">🌙/☀️</button>
+    <button onclick="toggleMusic()">🎵</button>
+  </div>
+
+  <!-- Carta principal -->
   <div class="carta">
-    <h1>Para alguien muy especial 💜</h1>
-    
+    <h1>Un mes que lo cambió todo 💜</h1>
+
     <p>
-      Esta es una pequeña carta virtual para decirte<br>
-      lo mucho que te aprecio, Intie :) ☁️🌸<br>
-      Aunque hace poco más de un mes que nos conocemos, créeme que ha sido el mejor mes de este año...
+      A veces la vida te sorprende sin aviso. Y esta vez, fue contigo, Intie.<br>
+      Llegaste en un momento donde ya no esperaba sentirme tan en paz con alguien.<br>
+      No sé si lo sabes, pero desde que hablas conmigo, sonrío más. Pienso más bonito.
     </p>
 
     <img class="decoracion" src="https://i.pinimg.com/originals/b8/95/8d/b8958d324507034778208e7f3c3b0ea2.jpg" alt="Decoración">
 
     <p>
-      Es genial cómo he llegado a admirarte y quererte tanto. Eres alguien muy tierna, fuerte y divertida.
-      Me la paso muy bien hablando contigo, por eso quiero que también seas feliz y logres tus sueños.
+      Admiro tu forma de ser, tu ternura sin esfuerzo, tu fuerza silenciosa. No finges ser alguien perfecta, y eso te hace más real.  
+      Me inspiras a seguir siendo mejor, solo por el hecho de saber que existes.  
+      Agradezco cada charla, cada dibujo tuyo, cada momento en el que me dejas acompañarte.
     </p>
 
     <img class="decoracion" src="https://www.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/10/flor-nube-significado.jpg" alt="Decoración 2">
 
     <p>
-      Esta amistad la atesoro con todo mi corazón. Te veo como la gran persona que eres, y ahora que te veo, no apartaré la vista. Estaré ahí, pase lo que pase. Siempre y cuando me permitas seguir en tu vida. Gracias por dejarme estarlo aún :)
+      Quiero verte feliz, tranquila y realizada. Y si puedo hacerte sonreír un poco más en el proceso, entonces estaré feliz también.  
+      Tal vez no pueda prometer estar para siempre, pero mientras me dejes, estaré contigo con todo mi corazón.
     </p>
 
-    <p>Con cariño: David</p>
+    <p>— Con cariño, David 💌</p>
 
-    <div class="emojis">💜🌸☁️✨🌈</div>
+    <div class="emojis">🦋☁️🌙✨💜</div>
 
+    <!-- Sorpresa oculta -->
     <div class="click-reveal" onclick="document.getElementById('secreto').style.display='block'">
-      💌 Haz clic aquí para leer algo secreto
+      🌸 Haz clic aquí
     </div>
     <div id="secreto" class="secreto">
-      Gracias por existir. Tu luz brilla más de lo que tú misma imaginas 🌟
+      Eres una de las mejores casualidades que me ha dado esta vida. Y no la pienso desaprovechar.
     </div>
 
-    <ul>
-      <li><strong>Hace 1 mes:</strong> Nos conocimos</li>
-      <li><strong>Primera charla larga:</strong> Me hiciste reír como no lo hacía en meses</li>
-      <li><strong>Jugamos juntos:</strong> Me encantó verte feliz</li>
-    </ul>
 
-    <div class="botones">
-      <button onclick="toggleTheme()">🌙/☀️ Cambiar modo</button>
-      <button onclick="toggleMusic()">🎵 Música</button>
-    </div>
   </div>
 
+  <!-- Música de fondo -->
   <audio id="bgMusic" autoplay loop>
   <source src="https://github.com/Doiker380/Carta_02/intie.mp3" type="audio/mpeg">
   Tu navegador no soporta audio.
 </audio>
 
+  <!-- Script -->
   <script>
     function toggleTheme() {
       document.body.classList.toggle('modoClaro');
@@ -202,3 +208,4 @@
 
 </body>
 </html>
+
